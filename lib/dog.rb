@@ -32,7 +32,8 @@ class Dog
       SQL
       DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
-      binding.pry
+      # binding.pry
+      # @id == 1 in pry
     end
     self
   end
@@ -42,8 +43,8 @@ class Dog
   end
 
   def self.create(info)
-    binding.pry
-
+    # binding.pry
+    # [:name=>"Raplh",  :breed="lab"]
     dog=Dog.new(info)
     dog.save
     dog
