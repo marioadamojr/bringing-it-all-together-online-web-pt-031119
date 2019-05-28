@@ -76,6 +76,4 @@ class Dog
     result = DB[:conn].execute("SELECT * FROM dogs WHERE name = ?", name)[0]
     dog = Dog.new(id:result[0], name:result[1], breed:result[2])
   end
-
-  def
 end
