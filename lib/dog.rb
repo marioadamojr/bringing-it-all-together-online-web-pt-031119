@@ -34,4 +34,13 @@ class Dog
     end.first
   end
 
+  def update
+    DB[:conn].execute("UPDATE dogs SET name = ?, breed = ? WHERE = ?", self.name, self.breed, self.id)
+  end
+
+  def self.create
+    dog=Dog.new
+    dog.save
+    dog
+  end
 end
